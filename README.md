@@ -63,42 +63,47 @@ To design and implement an affordable, low-power IoT system that enables farmers
 - Simple mobile/web app built with React, Flutter, or plain HTML dashboard  
 - SMS/WhatsApp alerts for low-connectivity areas  
 
-## 🤝 How to Contribute
+## ⚙️ Setup & Usage
 
-We welcome contributions from developers, researchers, and IoT enthusiasts!  
-Here are some ways you can get involved:
+Follow these steps to set up and run the project on your hardware:
 
-1. **Fork the Repository**  
-   - Fork this project to your GitHub account.  
-   - Clone your fork locally to start experimenting.  
+### 1. Clone the Repository
+Run the following commands in your terminal:
 
-2. **Pick an Issue or Suggest a Feature**  
-   - Check the [Issues](../../issues) tab for tasks, bugs, or feature requests.  
-   - Propose new ideas by opening an issue.  
+```bash
+    git clone https://github.com/OpenIoTResearch/smart-agriculture-iot.git 
+```
 
-3. **Make Your Changes**  
-   - Create a new branch (`git checkout -b feature-new-sensor`).  
-   - Write clean, well-documented code.  
-   - Add/update documentation if needed (README, diagrams, comments).  
+cd smart-agriculture-iot
 
-4. **Test Before Submitting**  
-   - Test your code on real hardware (ESP32/Arduino + sensors).  
-   - Ensure it does not break existing features.  
+### 2. Install Arduino IDE / PlatformIO
+   - Download and install [Arduino IDE](https://www.arduino.cc/en/software) or [PlatformIO](https://platformio.org/).
+   - Add support for ESP32 boards via the Arduino Board Manager (if using ESP32).
 
-5. **Submit a Pull Request (PR)**  
-   - Push your branch and open a PR against the `main` branch.  
-   - Clearly describe what you changed and why.  
+### 3. Connect the Hardware
+    - ESP32 or Arduino Uno board
+    - Soil moisture sensor → connect to A0
+    - DHT11 sensor → connect to Digital pin 2
+    - Light sensor (LDR) → connect to A1
+    - Battery or USB power supply
 
-### Contribution Ideas
-- Add support for new sensors (fertilizer, pH, CO₂, etc.)  
-- Improve the mobile/web dashboard for farmers  
-- Optimize battery consumption for longer field deployments  
-- Localize documentation for non-English-speaking farmers  
-- Write blog posts, tutorials, or YouTube demos to help others use this project  
+### 4. Upload the Code
+    1. Open the project in Arduino IDE or VS Code (PlatformIO).
+    2. Select the correct board (ESP32/Arduino) and COM port.
+    3. Compile and upload the sketch to your board.
 
-### Code of Conduct
-This project follows the [Contributor Covenant](https://www.contributor-covenant.org/).  
-Please be respectful, inclusive, and supportive when interacting with the community.  
+### 5. Open Serial Monitor
+    - After uploading, open the Serial Monitor (`Ctrl + Shift + M` in Arduino IDE).
+    - You should see real-time data for:
+        - Soil moisture 🌱
+        - emperature & humidity 🌡️
+        - Light levels ☀️
+
+### 6. Deploy & Use
+    - Place the sensors in the soil and environment.
+    - Monitor the data via Serial Monitor, IoT dashboard, or mobile/web interface (if configured).
+    - Use the collected data to decide on irrigation, crop monitoring, and other farming actions.
+
 
 ## 📜 License
 
